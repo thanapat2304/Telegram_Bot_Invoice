@@ -1,6 +1,6 @@
 # 📦 Telegram_Bot_Invoice
 
-![Telegram Bot Screenshot](telegram_photo.jpg)
+![Telegram Bot Screenshot](telegram_new.jpg)
 
 **Telegram_Bot_Invoice** is designed to deliver shipping details for each branch via Telegram.  
 Each branch is assigned to its own dedicated group chat, where the bot sends **daily summary reports** of all shipments.
