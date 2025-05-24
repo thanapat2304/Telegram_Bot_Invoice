@@ -89,7 +89,7 @@ def generate_summary_text(df):
     for _, row in branch_group.iterrows():
         text += f"\n📍 {row['Branch']}: {row['OrderCount']} บิล"
 
-    text += f"\n=============================\n📄 เอกสารสรุปประจำวันตามไฟล์แนบ \n🤖 AUTOBOT - AEPTHAILAND \n🗓GetDate : {datetime_str}"
+    text += f"\n=============================\n📄 เอกสารสรุปประจำวันตามไฟล์แนบ \n🤖 AUTOBOT - THAILAND \n🗓GetDate : {datetime_str}"
     return text
 
 def export_to_excel(df):
