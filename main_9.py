@@ -4,8 +4,8 @@ import telegram
 import asyncio
 from db_connection import connect_aep_DB
 
-TOKEN = '7501421824:AAFbTjHuJ8e1vO46KGnWCYu8iqqZbC8PRqk'
-CHAT_ID = '-1002620433808'
+TOKEN = '#'
+CHAT_ID = '-#'
 
 def fetch_data():
     today = datetime.now().strftime('%Y/%m/%d')
