@@ -10,43 +10,7 @@ CHAT_ID = '-#'
 def fetch_data():
     tomorrow = (datetime.now() + timedelta(days=1)).strftime('%Y/%m/%d')
     query = f"""
-    SELECT
-        SOTRNH.DOCDATE, 
-        SOTRNH_PRINT.DT, 
-        SOTRNH.DOCNO, 
-        SOTRNH.CUSTNO, 
-        SOTRNH_PRINT.CUSTNAME, 
-        CAST(SOTRNH.SHIPLINE AS NVARCHAR(MAX)) AS Branch, 
-        SOTRNH.SMCODE, 
-        ARSALMAN.NAME, 
-        CAST(SOTRNH_PRINT.SHIPTO AS NVARCHAR(MAX)) AS ShipAddress, 
-        CAST(SOTRNH_PRINT.USERNAME AS NVARCHAR(MAX)) AS UserName
-    FROM dbo.SOTRNH_PRINT
-    LEFT JOIN dbo.SOTRNH
-        ON SOTRNH_PRINT.COCODE = SOTRNH.COCODE AND
-           SOTRNH_PRINT.DT = SOTRNH.DT AND
-           SOTRNH_PRINT.DOCNO = SOTRNH.DOCNO
-    LEFT JOIN dbo.ARSALMAN
-        ON SOTRNH.COCODE = ARSALMAN.COCODE AND
-           SOTRNH.SMCODE = ARSALMAN.SMCODE
-    WHERE SOTRNH_PRINT.COCODE = 'AEPC'
-        AND ARSALMAN.COCODE = 'AEPC'
-        AND SOTRNH.COCODE = 'AEPC'
-        AND SOTRNH_PRINT.DT = 'TX'
-        AND SOTRNH.DT = 'TX'
-        AND SOTRNH.DOCDATE BETWEEN ('{tomorrow}') AND ('{tomorrow}')
-    GROUP BY
-        SOTRNH.DOCDATE, 
-        SOTRNH_PRINT.DT, 
-        SOTRNH.DOCNO, 
-        SOTRNH.CUSTNO, 
-        SOTRNH_PRINT.CUSTNAME, 
-        SOTRNH.SMCODE, 
-        ARSALMAN.NAME, 
-        CAST(SOTRNH_PRINT.USERNAME AS NVARCHAR(MAX)), 
-        CAST(SOTRNH.SHIPLINE AS NVARCHAR(MAX)),
-        CAST(SOTRNH_PRINT.SHIPTO AS NVARCHAR(MAX))
-    ORDER BY SOTRNH.DOCNO ASC
+    SELECT * FROM customers WHERE customer_id = 12345;
     """
     conn = connect_aep_DB()
     df = pd.read_sql(query, conn)

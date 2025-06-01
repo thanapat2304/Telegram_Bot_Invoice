@@ -54,3 +54,7 @@ This system ensures consistent, timely reporting without the need for manual int
 
 ### 👨‍💻 Developed By
 **Thanapurt Sopon**
+
+## 📌 Disclaimer:
+This repository contains a mock/demo version of a system built for portfolio purposes.
+All data is mocked. This is not the final production version, and no confidential information is included.
